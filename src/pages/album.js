@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import CardAlbum from '../components/gallery/CardAlbum'
+import GalleryList from '../components/gallery/GalleryList'
 import CardAddAlbum from '../components/gallery/CardAddAlbum'
 import './albumStyle.css'
 import { 
@@ -11,6 +11,25 @@ class Album extends Component{
 
     constructor(props){
         super(props)
+        this.state = {
+            albums : [
+                {
+                    id: 1,
+                    albumTittle: "Jc Test",
+                    img: "https://res.cloudinary.com/dtfdylnjz/image/upload/v1577717582/Photos/xggeopmh4qgyscnm94qk.png"
+                },
+                {
+                    id: 2,
+                    albumTittle: "Michell Album",
+                    img: "https://res.cloudinary.com/dtfdylnjz/image/upload/v1578515034/Photos/jlhmh0nyqtu157zex91r.png"
+                },
+                {
+                    id: 3,
+                    albumTittle: "Secrect Album",
+                    img: "https://res.cloudinary.com/dtfdylnjz/image/upload/v1578089051/Photos/bt9cdsxxxhat1ujr4m9v.jpg"
+                }
+            ]
+        }
     }
     
     render(){
@@ -19,9 +38,8 @@ class Album extends Component{
                 <CardGroup>
                     <Row>
                         <CardAddAlbum/>
-                        <CardAlbum
-                            albumTittle="Jc Test"
-                            img="https://res.cloudinary.com/dtfdylnjz/image/upload/v1577717582/Photos/xggeopmh4qgyscnm94qk.png"
+                        <GalleryList
+                            albums = {this.state.albums}
                         />
                     </Row>
                 </CardGroup>

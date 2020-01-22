@@ -19,7 +19,6 @@ class CardAlbum extends Component{
             albumTittle
         } = this.props;
         return (
-            <Col sm={6}>
                 <Card>
                     <Card.Img variant="top" 
                             src={img} />
@@ -29,7 +28,6 @@ class CardAlbum extends Component{
                         </Card.Text>
                     </Card.ImgOverlay>
                 </Card>
-            </Col>
         )
     }
 }
